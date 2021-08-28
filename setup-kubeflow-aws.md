@@ -4,10 +4,10 @@
 # EKS Cluster Setup
 # ===============================================================
 # IMPORTANT : AWS_CLUSTER_NAME needs to conform to regular expression pattern: [a-zA-Z][-a-zA-Z0–9]
-export AWS_CLUSTER_NAME=mdai-cluster-p-1
+export AWS_CLUSTER_NAME=mdai-clust-poc-1
 export AWS_REGION=us-west-2
 export K8S_VERSION=1.18
-export EC2_INSTANCE_TYPE_1=c5a.2xlarge
+export EC2_INSTANCE_TYPE_1=inf1.xlarge
 
 
 
@@ -113,3 +113,23 @@ kubectl get ingress -n istio-system
 
 
 # ===============================================================
+
+## Install & Setup aws cli
+
+## Install eksctl
+
+## Install Kubeflow prerequisites
+
+https://github.com/kubeflow/manifests/tree/v1.4.0-rc.0#prerequisites
+
+## Setup aws eks cluster by following kubeflow install guide
+
+## Install Kubeflow 
+
+https://github.com/kubeflow/manifests/tree/v1.4.0-rc.0#installation
+
+### If not production then setup portforwarding
+
+kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+
+## Create dex account by logging in
